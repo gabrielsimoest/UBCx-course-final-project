@@ -7,6 +7,7 @@ import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.tilesources.BingAerialTileSource;
 import query.Query;
+import twitter.LiveTwitterSource;
 import twitter.PlaybackTwitterSource;
 import twitter.TwitterSource;
 import util.SphericalGeometry;
@@ -15,6 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Console;
 import java.util.*;
 import java.util.List;
 import java.util.Timer;
@@ -41,7 +43,7 @@ public class Application extends JFrame {
         // The number passed to the constructor is a speedup value:
         //  1.0 - play back at the recorded speed
         //  2.0 - play back twice as fast
-        twitterSource = new PlaybackTwitterSource(60.0);
+        twitterSource = new PlaybackTwitterSource(600);
 
         queries = new ArrayList<>();
     }
@@ -55,7 +57,7 @@ public class Application extends JFrame {
         Set<String> allterms = getQueryTerms();
         twitterSource.setFilterTerms(allterms);
         contentPanel.addQuery(query);
-        // TODO: This is the place where you should connect the new query to the twitter source
+        twitterSource.addObserver(query);
     }
 
     /**
@@ -121,10 +123,42 @@ public class Application extends JFrame {
             public void mouseMoved(MouseEvent e) {
                 Point p = e.getPoint();
                 ICoordinate pos = map().getPosition(p);
-                // TODO: Use the following method to set the text that appears at the mouse cursor
-                map().setToolTipText("This is a tooltip");
+                List<MapMarker> markersFound = getMarkersCovering(pos, pixelWidth(p));
+
+                if (!markersFound.isEmpty()) {
+                    for (MapMarker marker : markersFound) {
+                        PrettyMarker prettymarker = (PrettyMarker) marker;
+                        String tooltipText;
+
+                        Color color = prettymarker.getColor();
+                        String colorHex = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
+
+                        if (prettymarker.getImage() != null) {
+                            tooltipText = "<html>"
+                                    + "<div style='border: 5px solid " + colorHex + "; border-radius: 8px; padding: 10px; background-color: #f9f9f9; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); text-align: center;'>"
+                                    + "<img src='" + prettymarker.getImageURL() + "' height='80' width='80' style='display: block; margin: 0 auto;'/>"
+                                    + "<p style='font-weight: bold; color: #333;'>" + prettymarker.getUser().getName() + "</p>"
+                                    + "<p style='color: #555;'>" + prettymarker.getText() + "</p>"
+                                    + "</div>"
+                                    + "</html>";
+                        } else {
+                            tooltipText = "<html>"
+                                    + "<div style='border: 5px solid " + colorHex + "; border-radius: 8px; padding: 10px; background-color: #f9f9f9; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); text-align: center;'>"
+                                    + "<p style='font-weight: bold; color: #333;'>" + prettymarker.getUser().getName() + "</p>"
+                                    + "<p style='color: #555;'>" + prettymarker.getText() + "</p>"
+                                    + "</div>"
+                                    + "</html>";
+                        }
+
+                        map().setToolTipText(tooltipText);
+                    }
+                } else {
+                    map().setToolTipText(null);
+                }
             }
         });
+
+
     }
 
     // How big is a single pixel on the map?  We use this to compute which tweet markers

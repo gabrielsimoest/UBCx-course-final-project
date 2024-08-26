@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="59c0a953-a6cc-4dad-baed-ba3ad9071538" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JMapViewer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/filters/AndFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/filters/OrFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/filters/AndFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/filters/OrFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/PrettyMarker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/filters/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/filters/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/query/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/query/Query.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/twitter/TwitterSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/twitter/TwitterSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/ui/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/ui/Application$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/ui/Application$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/ui/Application$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/ui/Application$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/ui/Application$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/ui/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/ui/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/ui/MapMarkerSimple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/ui/MapMarkerSimple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filters/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filters/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/query/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/query/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/twitter/TwitterSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/twitter/TwitterSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/MapMarkerSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MapMarkerSimple.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,9 +266,16 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
     <option name="y" value="23" />
@@ -300,14 +326,20 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.TestParser.testHairy.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Gabriel/AndroidStudioProjects/Counter/final-project-starter/TwitterMapperStarter/libs/twitter4j-stream-4.0.4.jar",
+    "last_opened_file_path": "C:/Users/Gabriel/AndroidStudioProjects/Counter/final-project-starter/TwitterMapperStarter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -320,11 +352,11 @@
       <recent name="twitter" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="twitter.test" />
       <recent name="ui" />
+      <recent name="filters" />
+      <recent name="twitter.test" />
       <recent name="twitter" />
       <recent name="util" />
-      <recent name="filters.test" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -424,17 +456,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPlaybackTwitterSource" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="210project" />
+    <configuration name="TestParser.testHairy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TwitterMapperStarter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="twitter.test.*" />
+          <option name="PATTERN" value="filters.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="twitter.test" />
-      <option name="MAIN_CLASS_NAME" value="twitter.test.TestPlaybackTwitterSource" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="filters.test" />
+      <option name="MAIN_CLASS_NAME" value="filters.test.TestParser" />
+      <option name="METHOD_NAME" value="testHairy" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
@@ -491,17 +524,17 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.CaptureTwitterSourceData" />
+      <item itemvalue="JUnit.TestParser.testHairy" />
       <item itemvalue="JUnit.TestParser" />
-      <item itemvalue="JUnit.TestPlaybackTwitterSource" />
       <item itemvalue="JUnit.TestScanner" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestParser.testHairy" />
         <item itemvalue="JUnit.TestScanner" />
         <item itemvalue="JUnit.TestParser" />
         <item itemvalue="Application.CaptureTwitterSourceData" />
-        <item itemvalue="JUnit.TestPlaybackTwitterSource" />
       </list>
     </recent_temporary>
   </component>
@@ -538,6 +571,7 @@
       <workItem from="1503603343961" duration="29000" />
       <workItem from="1503603452332" duration="49902000" />
       <workItem from="1724266884540" duration="119000" />
+      <workItem from="1724674676244" duration="5250000" />
     </task>
     <servers />
   </component>
@@ -627,6 +661,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -640,8 +685,18 @@
           <line>75</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/PrettyMarker.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="filters.OrFilter" memberName="firstChild" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/twitter4j-core-4.0.4.jar!/twitter4j/Status.class" />

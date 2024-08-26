@@ -41,7 +41,7 @@ public class Parser {
         scanner = new Scanner(input);
     }
 
-    public Filter parse() throws SyntaxError {
+    public Filter parse() throws SyntaxError { 
         Filter ans = expr();
         if (scanner.peek() != null) {
             throw new SyntaxError("Extra stuff at end of input");
@@ -63,6 +63,7 @@ public class Parser {
             // that are to be connected by "or"
             // TODO: Construct the appropriate new Filter object
             // The new filter object should be assigned to the variable "sub"
+            sub = new OrFilter(sub,right);
             token = scanner.peek();
         }
         return sub;
@@ -78,6 +79,7 @@ public class Parser {
             // that are to be connected by "and"
             // TODO: Construct the appropriate new Filter object
             // The new filter object should be assigned to the variable "sub"
+            sub = new AndFilter(sub,right);
             token = scanner.peek();
         }
         return sub;
